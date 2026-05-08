@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AulaService {
-    // Matriz de 5x5: 0 libre, 1 ocupado [cite: 38, 41, 42]
+    // Matriz de 5x5: 0 libre, 1 ocupado
     private int[][] asientos = new int[5][5];
 
     public String ocuparAsiento(int fila, int columna) {
@@ -13,12 +13,12 @@ public class AulaService {
     }
 
     public String liberarAsiento(int fila, int columna) {
-        asientos[fila][columna] = 0; // [cite: 45]
+        asientos[fila][columna] = 0;
         return "Asiento [" + fila + "][" + columna + "] liberado";
     }
 
     public int[][] mostrarMatriz() {
-        return asientos; // [cite: 46]
+        return asientos;
     }
 
     public int contarOcupados() {
@@ -28,6 +28,6 @@ public class AulaService {
                 if (asientos[i][j] == 1) total++;
             }
         }
-        return total; // [cite: 47]
+        return total;
     }
 }
